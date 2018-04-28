@@ -2,6 +2,8 @@ package com.mycompany.nuevaexpimaven;
 
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.context.FacesContext;
 import org.primefaces.context.RequestContext;
 
 /**
@@ -11,31 +13,26 @@ import org.primefaces.context.RequestContext;
 @Named(value = "Diente18")
 @Dependent
 public class Diente18 {
-    private String nombre = "Diente18";
+
+    private String nombre;
     private String izquierda;
     private String derecha;
     private String superior;
     private String inferior;
     
-    public void Nombres(){
-        String funcion = "operacion(" +"'"+getIzquierda() +"'"+ ")";
+    public void Nombres() {
+        String funcion = "operacion(" + "'" + getIzquierda() + "'" + ")";
         System.out.println(funcion);
         RequestContext.getCurrentInstance().execute(funcion);
         System.out.println("Exito." + getIzquierda());
     }
-    
-    public void hola(String a){
-        System.out.println(a);
-    }
-    
-    public void doSomething(String componentId) {
-        
-        String funcion = "operacion(" +"'"+componentId +"'"+ ")";
-        System.out.println(funcion);
-        RequestContext.getCurrentInstance().execute(funcion);
-        System.out.println("Exito." + componentId);
+
+    public void hola() {
+        String color= FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("color"); 
+        System.out.println("El color es "+ color);
     }
 
+   
     /**
      * @return the nombre
      */
@@ -48,31 +45,25 @@ public class Diente18 {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+        System.out.println("El diente es" + nombre);
     }
-    
-   /* public static void main(String[] args) {
-        Diente18 diente = new Diente18();
-        String funcion = "operacion(" + diente.getNombre() + ");";
-        System.out.println(funcion);
-        System.out.println("Exito " + diente.getNombre());
-    }*/
 
-    /**
+    /* 
      * @return the izquierda
      */
     public String getIzquierda() {
-        
+
         return izquierda;
-        
+
     }
 
     /**
      * @param izquierda the izquierda to set
      */
     public void setIzquierda(String izquierda) {
-        
+
         this.izquierda = izquierda;
-       
+
     }
 
     /**
@@ -116,5 +107,7 @@ public class Diente18 {
     public void setInferior(String inferior) {
         this.inferior = inferior;
     }
+
+  
 
 }
