@@ -18,7 +18,7 @@
                 var color = document.getElementById(espacio).getAttribute("fill");
                 var d = document.getElementById(espacio).getAttribute("d");
                 var toot = espacio.match(/\d/g);
-                diente = toot.join("");
+                var diente = toot.join("");
                 if (d === izquierda) {
                     var posicion = "izquierda";
                     if (color === white) {
@@ -71,9 +71,7 @@
             }
             ;
         </script>
-
         <p:remoteCommand name="ColorCommand" action="#{diente.hola}" process="@this" />
-
         <h:panelGrid columns="2" cellpadding="5">
             <p:outputLabel value="Total de dientes: "/>
             <p:inputText id="Num_dientes" value=""/>
@@ -86,10 +84,6 @@
 
             <p:outputLabel value="Extensión de placa"/>
             <p:inputText id="Extension_placa" value=""/>
-
-            <h:outputLabel value="sdas"/>
-            <h:inputText id="Pruebas" value=""/> 
-        </h:panelGrid>
 
         <p:spacer/>
         <p:panelGrid columns="16" class="panelGridCenter">

@@ -15,9 +15,6 @@ import javax.faces.context.FacesContext;
 @Named(value = "diente")
 @Dependent
 public class Diente {
-   
-    
-    
     public void hola() {
         String diente= FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("diente"); 
         System.out.println("El diente es "+diente);
@@ -26,6 +23,4 @@ public class Diente {
         String color= FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("color"); 
         System.out.println("El color es "+ color);
     }
-
-    
 }
