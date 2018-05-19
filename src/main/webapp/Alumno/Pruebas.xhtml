@@ -7,42 +7,42 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<body>
+    <body>
 
-<ui:composition template="./ExpiTemplate.xhtml">
+        <ui:composition template="./ExpiTemplate.xhtml">
 
-    <ui:define name="content">
-        <h:form>
+            <ui:define name="content">
+                <h:form>
 
-            <p:growl id="growl" sticky="true" showDetail="true"/>
+                    <p:growl id="growl" sticky="true" showDetail="true"/>
 
-            <p:wizard flowListener="#{userWizard.onFlowProcess}">
+                    <p:wizard flowListener="#{userWizard.onFlowProcess}">
 
-                <p:tab id="Datos_Paciente" title="Datos Personales">
-                    <ui:include src="Odontograma.xhtml"/>
-                </p:tab>
+                        <p:tab id="Datos_Paciente" title="Datos Personales">
+                            <ui:include src="VistaDientes.xhtml"/>
+                        </p:tab>
 
-                <p:tab id="Cuestionario" title="Cuestionario">
-                    <p:panel header="Cuestionario">
-                    </p:panel>
-                </p:tab>
+                        <p:tab id="Cuestionario" title="Cuestionario">
+                            <p:panel header="Cuestionario">
+                            </p:panel>
+                        </p:tab>
 
-                <p:tab id="Examen_Orofacial" title="Examen Orofacial">
-                    <p:panel header="Examen Orofacial">
-                    </p:panel>
-                </p:tab>
+                        <p:tab id="Examen_Orofacial" title="Examen Orofacial">
+                            <p:panel header="Examen Orofacial">
+                            </p:panel>
+                        </p:tab>
 
-                <p:tab id="confirm" title="Odontograma">
-                    <p:panel header="Odontograma">
-                    </p:panel>
-                </p:tab>
+                        <p:tab id="confirm" title="Odontograma">
+                            <p:panel header="Odontograma">
+                            </p:panel>
+                        </p:tab>
+                        
+                    </p:wizard>
 
-            </p:wizard>
+                </h:form>
+            </ui:define>
 
-        </h:form>
-    </ui:define>
+        </ui:composition>
 
-</ui:composition>
-
-</body>
+    </body>
 </html>
